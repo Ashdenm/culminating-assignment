@@ -1,7 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class character {
-
+public class artificer {
 
     public void pc() {
 
