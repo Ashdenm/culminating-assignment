@@ -5,14 +5,20 @@ public class App {
 
     static String title = "Character Creator";
     static String message = "Choose a Class";
+    public int level;
 
     public static void main(String[] args) throws Exception {
         String userClass = (String)JOptionPane.showInputDialog(null,
         message, title, JOptionPane.PLAIN_MESSAGE, null,  classes, "Artificer");
 
         if (userClass == "Artificer") {
-            
+            artificer arti = new artificer();
+            arti.pc();
+        } else if (userClass == "Barbarian") {
+            barbarian barb = new barbarian();
+            barb.pc();
         }
+        
 
             
     }
