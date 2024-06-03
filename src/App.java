@@ -8,8 +8,7 @@ public class App {
     public int level;
 
     public static void main(String[] args) throws Exception {
-        String userClass = (String)JOptionPane.showInputDialog(null,
-        message, title, JOptionPane.PLAIN_MESSAGE, null,  classes, "Artificer");
+        String userClass = (String)JOptionPane.showInputDialog(null, message, title, JOptionPane.PLAIN_MESSAGE, null,  classes, "Artificer");
 
         if (userClass == "Artificer") {
             artificer arti = new artificer();
@@ -17,7 +16,30 @@ public class App {
         } else if (userClass == "Barbarian") {
             barbarian barb = new barbarian();
             barb.pc();
+        } else if (userClass == "Bard") {
+
+        } else if (userClass == "Cleric") {
+
+        } else if (userClass == "Druid") {
+
+        } else if (userClass == "Fighter") {
+            
+        } else if (userClass == "Monk") {
+
+        } else if (userClass == "Paladin") {
+
+        } else if (userClass == "Ranger") {
+
+        } else if (userClass == "Rogue") {
+
+        } else if (userClass == "Sorcerer") {
+
+        } else if (userClass == "Warlock") {
+
+        } else {
+
         }
+
         
 
             
