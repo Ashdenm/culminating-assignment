@@ -6,6 +6,8 @@ public class App {
     static String title = "Character Creator";
     static String message = "Choose a Class";
     public int level;
+    static Object statsOptions[] = {"Standard array", "Random", "Input"};
+    static stats gen = new stats();
 
     public static void main(String[] args) throws Exception {
         String userClass = (String)JOptionPane.showInputDialog(null, message, title, JOptionPane.PLAIN_MESSAGE, null,  classes, "Artificer");
@@ -38,6 +40,14 @@ public class App {
 
         } else {
 
+        }
+        String statsMethod = (String)JOptionPane.showInputDialog(null, "Choose a stat generation method", "Stats generation", JOptionPane.PLAIN_MESSAGE, null,  statsOptions, "Standard array");
+        if (statsMethod == "Standard array") {
+            gen.standardArray();
+        } else if (statsMethod == "Random") {
+            gen.randomStats();
+        } else {
+            gen.inputStats();
         }
 
         
