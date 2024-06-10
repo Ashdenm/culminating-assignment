@@ -34,9 +34,44 @@ public class stats {
         Object[] stats = {str, dex, con, inte, wis, cha};
     }
     public void randomStats() {
+        int min = 3;
+        int max = 18;
+        int str = (int)Math.floor(Math.random() * (max - min + 1) + min);
+        int dex = (int)Math.floor(Math.random() * (max - min + 1) + min);
+        int con  = (int)Math.floor(Math.random() * (max - min + 1) + min);
+        int inte = (int)Math.floor(Math.random() * (max - min + 1) + min);
+        int wis = (int)Math.floor(Math.random() * (max - min + 1) + min);
+        int cha = (int)Math.floor(Math.random() * (max - min + 1) + min);
         
+        Object[] stats = {str, dex, con, inte, wis, cha};
+        JOptionPane.showMessageDialog(null, stats, "Stats generated", JOptionPane.INFORMATION_MESSAGE);
     }
     public void inputStats() {
-
+        int str = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Strength score (3-18)", "Strength score", JOptionPane.PLAIN_MESSAGE));
+        while (str < 3 || str > 18) {
+            str = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Strength score (3-18)", "Strength score", JOptionPane.ERROR_MESSAGE));
+        }
+        int dex = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Dexterity score (3-18)", "Dexterity score", JOptionPane.PLAIN_MESSAGE));
+        while (dex < 3 || dex > 18) {
+            dex = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Dexterity score (3-18)", "Dexterity score", JOptionPane.ERROR_MESSAGE));
+        }
+        int con = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Constitution score (3-18)", "Constitution score", JOptionPane.PLAIN_MESSAGE));
+        while (con < 3 || con > 18) {
+            con = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Constitution score (3-18)", "Constitution score", JOptionPane.ERROR_MESSAGE));
+        }
+        int inte = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Intelligence score (3-18)", "Intelligence score", JOptionPane.PLAIN_MESSAGE));
+        while (inte < 3 || inte > 18) {
+            inte = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Intelligence score (3-18)", "Intelligence score", JOptionPane.ERROR_MESSAGE));
+        }
+        int wis = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Wisdom score (3-18)", "Wisdom score", JOptionPane.PLAIN_MESSAGE));
+        while (wis < 3 || wis > 18) {
+            wis = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Wisdom score (3-18)", "Wisdom score", JOptionPane.ERROR_MESSAGE));
+        }
+        int cha = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Charisma score (3-18)", "Charisma score", JOptionPane.PLAIN_MESSAGE));
+        while (cha < 3 || cha > 18) {
+            cha = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Charisma score (3-18)", "Charisma score", JOptionPane.ERROR_MESSAGE));
+        }
+        Object[] stats = {str, dex, con, inte, wis, cha};
+        JOptionPane.showMessageDialog(null, stats);
     }
 }
