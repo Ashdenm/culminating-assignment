@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 
 public class App {
-    static Object[] classes = {"Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"};
+    static Object[] classes = {"Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"};
 
     static String title = "Character Creator";
     static String message = "Choose a Class";
@@ -14,18 +14,16 @@ public class App {
         String statsMethod = (String)JOptionPane.showInputDialog(null, "Choose a stat generation method", "Stats generation", JOptionPane.PLAIN_MESSAGE, null,  statsOptions, "Standard array");
         if (statsMethod == "Standard array") {
             gen.standardArray();
+            gen.abilityMods();
         } else if (statsMethod == "Random") {
             gen.randomStats();
         } else {
             gen.inputStats();
         }
 
-        String userClass = (String)JOptionPane.showInputDialog(null, message, title, JOptionPane.PLAIN_MESSAGE, null,  classes, "Artificer");
+        String userClass = (String)JOptionPane.showInputDialog(null, message, title, JOptionPane.PLAIN_MESSAGE, null,  classes, "Barbarian");
 
-        if (userClass == "Artificer") {
-            artificer arti = new artificer();
-            arti.pc();
-        } else if (userClass == "Barbarian") {
+        if (userClass == "Barbarian") {
             barbarian barb = new barbarian();
             barb.pc();
         } else if (userClass == "Bard") {
