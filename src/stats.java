@@ -2,18 +2,18 @@ import javax.swing.JOptionPane;
 
 public class stats {
     static Object sa[] = {15, 14, 13, 12, 10, 8};
-    public int str;
-    public int dex;
-    public int con;
-    public int inte;
-    public int wis;
-    public int cha;
-    public int strMod;
-    public int dexMod;
-    public int conMod;
-    public int inteMod;
-    public int wisMod;
-    public int chaMod;
+    public static int str;
+    public static int dex;
+    public static int con;
+    public static int inte;
+    public static int wis;
+    public static int cha;
+    public static int strMod;
+    public static int dexMod;
+    public static int conMod;
+    public static int inteMod;
+    public static int wisMod;
+    public static int chaMod;
 
     public void standardArray() {
         str = (Integer)JOptionPane.showInputDialog(null, "Choose strength score", "Strength score", JOptionPane.PLAIN_MESSAGE, null,  sa, 15);
@@ -46,7 +46,7 @@ public class stats {
     }
 
     public void randomStats() {
-        int min = 3;
+        int min = 8;
         int max = 18;
         str = (int)Math.floor(Math.random() * (max - min + 1) + min);
         dex = (int)Math.floor(Math.random() * (max - min + 1) + min);
@@ -54,8 +54,6 @@ public class stats {
         inte = (int)Math.floor(Math.random() * (max - min + 1) + min);
         wis = (int)Math.floor(Math.random() * (max - min + 1) + min);
         cha = (int)Math.floor(Math.random() * (max - min + 1) + min);
-        Object[] abilityScores = {str, dex, con, inte, wis, cha};
-        JOptionPane.showMessageDialog(null, abilityScores, "Stats generated", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void inputStats() {
@@ -82,9 +80,11 @@ public class stats {
         cha = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Charisma score (3-18)", "Charisma score", JOptionPane.PLAIN_MESSAGE));
         while (cha < 3 || cha > 18) {
             cha = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Charisma score (3-18)", "Charisma score", JOptionPane.ERROR_MESSAGE));
-            Object[] abilityScores = {str, dex, con, inte, wis, cha};
         }
+        
     }
+
+
     public void abilityMods() {
         if (str == 3) {
             strMod = -4;
@@ -108,7 +108,6 @@ public class stats {
             strMod = 5;
         }
 
-        JOptionPane.showMessageDialog(null, strMod);
         if (dex == 3) {
             dexMod = -4;
         } else if (dex >= 4 && dex <= 5) {
@@ -218,7 +217,9 @@ public class stats {
         } else {
             chaMod = 5;
         }
+        Object[] abilityScore = {"Str: "+ stats.str + " (" + stats.strMod + ")", "Dex: " + stats.dex + " (" + stats.dexMod + ")", "Con: " + stats.con + " (" + stats.conMod + ")", "Int: " + stats.inte + " (" + stats.inteMod + ")", "Wis: " + stats.wis + " (" + stats.wisMod + ")", "Cha: " + stats.cha + " (" + stats.chaMod + ")"};
+        JOptionPane.showMessageDialog(null, abilityScore, "Stats generated", JOptionPane.INFORMATION_MESSAGE);
     }
-    
+
 
 }

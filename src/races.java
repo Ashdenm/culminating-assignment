@@ -2,64 +2,69 @@ import javax.swing.JOptionPane;
 
 public class races {
     Object races[] = {"Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Half-Orc", "Halfling", "Human", "Tiefling"};
-    stats mods = new stats();
     Object heAbilities[] = {"str", "dex", "con", "int", "wis"};
+    
 
     public void race() {
         String userRace = (String)JOptionPane.showInputDialog(null, "Choose a race", "Race choice", JOptionPane.PLAIN_MESSAGE, null,  races, "Dragonborn");
         if (userRace == "Dragonborn") {
-            mods.str = mods.str + 2;
-            mods.cha++;
+            stats.str = stats.str + 2;
+            stats.cha++;
         } else if (userRace == "Dwarf") {
-            mods.con = mods.con + 2;
+            stats.con = stats.con + 2;
         } else if (userRace == "Elf") {
-            mods.dex = mods.dex + 2;
+            stats.dex = stats.dex + 2;
         } else if (userRace == "Gnome") {
-            mods.inte = mods.inte + 2;
+            stats.inte = stats.inte + 2;
         } else if (userRace == "Half-Elf") {
-            mods.cha = mods.cha + 2;
+            stats.cha = stats.cha + 2;
             String asi1 = (String)JOptionPane.showInputDialog(null, "Choose an ability to increase by 1", "Half-elf asi", JOptionPane.PLAIN_MESSAGE, null, heAbilities, "str");
             if (asi1 == "str") {
-                mods.str++;
+                stats.str++;
             } else if (asi1 == "dex") {
-                mods.dex++;
+                stats.dex++;
             } else if (asi1 == "con") {
-                mods.con++;
+                stats.con++;
             } else if (asi1 == "int") {
-                mods.inte++;
+                stats.inte++;
             } else {
-                mods.wis++;
+                stats.wis++;
             }
             String asi2 = (String)JOptionPane.showInputDialog(null, "Choose a different ability to increase by 1", "Half-elf asi 2", JOptionPane.PLAIN_MESSAGE, null, heAbilities, "str");
             while (asi2 == asi1) {
                 asi2 = (String)JOptionPane.showInputDialog(null, "Choose a different ability to increase by 1", "Half-elf asi 2", JOptionPane.ERROR_MESSAGE, null, heAbilities, "str");
             }
             if (asi2 == "str") {
-                mods.str++;
+                stats.str++;
             } else if (asi2 == "dex") {
-                mods.dex++;
+                stats.dex++;
             } else if (asi2 == "con") {
-                mods.con++;
+                stats.con++;
             } else if (asi2 == "int") {
-                mods.inte++;
+                stats.inte++;
             } else {
-                mods.wis++;
+                stats.wis++;
             }
         } else if (userRace == "Half-Orc") {
-            mods.str = mods.str + 2;
-            mods.con++;
+            stats.str = stats.str + 2;
+            stats.con++;
         } else if (userRace == "Halfling") {
-            mods.dex = mods.dex + 2;
+            stats.dex = stats.dex + 2;
         } else if (userRace == "Human") {
-            mods.str++;
-            mods.dex++;
-            mods.con++;
-            mods.inte++;
-            mods.wis++;
-            mods.cha++;
+            stats.str++;
+            stats.dex++;
+            stats.con++;
+            stats.inte++;
+            stats.wis++;
+            stats.cha++;
         } else {
-            mods.inte++;
-            mods.cha = mods.cha + 2;
+            stats.inte++;
+            stats.cha = stats.cha + 2;
         }
+        
+        Object aS[] = {"Str: "+ stats.str + " (" + stats.strMod + ")", "Dex: " + stats.dex + " (" + stats.dexMod + ")", "Con: " + stats.con + " (" + stats.conMod + ")", "Int: " + stats.inte + " (" + stats.inteMod + ")", "Wis: " + stats.wis + " (" + stats.wisMod + ")", "Cha: " + stats.cha + " (" + stats.chaMod + ")"};
+        JOptionPane.showMessageDialog(null, aS, "New stats after race choice", JOptionPane.INFORMATION_MESSAGE);
+        
     }
+    
 }

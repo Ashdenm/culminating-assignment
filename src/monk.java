@@ -1,20 +1,20 @@
 import javax.swing.JOptionPane;
 
 
-public class cleric {
-    int clericLvl;
+public class monk {
+    int monkLvl;
     int hp;
 
     public void pc() {
-        clericLvl = Integer.parseInt(JOptionPane.showInputDialog("What starting level? (1-20) b"));
-        while ((clericLvl <= 1) && (clericLvl >= 20)) {
+        monkLvl = Integer.parseInt(JOptionPane.showInputDialog("What starting level? (1-20) b"));
+        while ((monkLvl <= 1) && (monkLvl >= 20)) {
             JOptionPane.showMessageDialog(null, "Input wasn't a number between 1-20", null, JOptionPane.ERROR_MESSAGE);
         }
 
-        if (clericLvl == 1) {
+        if (monkLvl == 1) {
             hp = 8 + stats.conMod;
         } else {
-            hp = 8 + (7 * (clericLvl - 1) + stats.conMod * clericLvl);
+            hp = 8 + (5 * (monkLvl - 1) + stats.conMod * monkLvl);
         }
         JOptionPane.showMessageDialog(null, "HP: " + hp);
     } 

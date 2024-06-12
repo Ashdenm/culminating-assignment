@@ -7,22 +7,25 @@ public class App {
     static String message = "Choose a Class";
     public int level;
     static Object statsOptions[] = {"Standard array", "Random", "Input"};
-    static stats gen = new stats();
-    static races race = new races();
+    
     public static void main(String[] args) throws Exception {
-
+        stats gen = new stats();
         String statsMethod = (String)JOptionPane.showInputDialog(null, "Choose a stat generation method", "Stats generation", JOptionPane.PLAIN_MESSAGE, null,  statsOptions, "Standard array");
         if (statsMethod == "Standard array") {
             gen.standardArray();
             gen.abilityMods();
         } else if (statsMethod == "Random") {
             gen.randomStats();
+            gen.abilityMods();
         } else {
             gen.inputStats();
+            gen.abilityMods();
         }
-
-        race.race();
-        JOptionPane.showMessageDialog(null, gen.abilityScores);
+        
+        races racesObj = new races();
+        racesObj.race();
+        gen.abilityMods();
+        
 
         String userClass = (String)JOptionPane.showInputDialog(null, message, title, JOptionPane.PLAIN_MESSAGE, null,  classes, "Barbarian");
 
@@ -54,9 +57,5 @@ public class App {
 
         }
 
-
-        
-
-            
     }
 }
