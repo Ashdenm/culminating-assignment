@@ -8,7 +8,7 @@ public class App {
     public int level;
     static Object statsOptions[] = {"Standard array", "Random", "Input"};
     static stats gen = new stats();
-
+    static races race = new races();
     public static void main(String[] args) throws Exception {
 
         String statsMethod = (String)JOptionPane.showInputDialog(null, "Choose a stat generation method", "Stats generation", JOptionPane.PLAIN_MESSAGE, null,  statsOptions, "Standard array");
@@ -21,13 +21,17 @@ public class App {
             gen.inputStats();
         }
 
+        race.race();
+        JOptionPane.showMessageDialog(null, gen.abilityScores);
+
         String userClass = (String)JOptionPane.showInputDialog(null, message, title, JOptionPane.PLAIN_MESSAGE, null,  classes, "Barbarian");
 
         if (userClass == "Barbarian") {
             barbarian barb = new barbarian();
             barb.pc();
         } else if (userClass == "Bard") {
-
+            bard bard = new bard();
+            bard.pc();
         } else if (userClass == "Cleric") {
 
         } else if (userClass == "Druid") {
