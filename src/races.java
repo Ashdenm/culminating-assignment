@@ -5,8 +5,10 @@ public class races {
     Object dbSubraces[] = {"Black", "Blue", "Green", "Red", "White", "Brass", "Bronze", "Copper", "Gold", "Silver"};
     Object heAbilities[] = {"str", "dex", "con", "int", "wis"};
     boolean darkvision = false;
-    static String breathWeapon;
-    static int bWDC;
+    static String breathweapon;
+    int bWDmg;
+    int bWDC;
+    static int speed = 30;
 
     public void race() {
         String userRace = (String)JOptionPane.showInputDialog(null, "Choose a race", "Race choice", JOptionPane.QUESTION_MESSAGE, null,  races, "Dragonborn");
@@ -14,9 +16,38 @@ public class races {
             stats.str = stats.str + 2;
             stats.cha++;
             bWDC = 8 + stats.conMod + App.proficiency; 
-            String uDBSubrace = (String)JOptionPane.showInputDialog(null, "Choose a subrace", "Subrace choice", JOptionPane.QUESTION_MESSAGE, null,  races, "Black");
+            if (App.level > 6) {
+                bWDmg = 2;
+            } else if (App.level > 5 && App.level < 11) {
+                bWDmg = 3;
+            } else if (App.level < 10 && App.level > 16) {
+                bWDmg = 4;
+            } else {
+                bWDmg = 5;
+            }
+            
+            String uDBSubrace = (String)JOptionPane.showInputDialog(null, "Choose a subrace", "Subrace choice", JOptionPane.QUESTION_MESSAGE, null,  dbSubraces, "Black");
             if (uDBSubrace == "Black" || uDBSubrace == "Copper") {
-                breathWeapon = "Acid, 5 by 30 ft. line, dex save DC: " + bWDC + " ";
+                breathweapon = "Acid, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                JOptionPane.showMessageDialog(null, breathweapon);
+            } else if (uDBSubrace == "Blue" || uDBSubrace == "Bronze") {
+                breathweapon = "Lightning, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                JOptionPane.showMessageDialog(null, breathweapon);
+            } else if (uDBSubrace == "Brass") {
+                breathweapon = "Fire, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                JOptionPane.showMessageDialog(null, breathweapon);
+            } else if (uDBSubrace == "Gold" || uDBSubrace == "Red") {
+                breathweapon = "Fire, 15 ft. cone, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                JOptionPane.showMessageDialog(null, breathweapon);
+            } else if (uDBSubrace == "Copper") {
+                breathweapon = "Acid, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                JOptionPane.showMessageDialog(null, breathweapon);
+            } else if (uDBSubrace == "Green") {
+                breathweapon = "Poison, 15 ft. cone, con save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                JOptionPane.showMessageDialog(null, breathweapon);
+            } else if (uDBSubrace == "Silver" || uDBSubrace == "White") {
+                breathweapon = "Cold, 15 ft. cone, con save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                JOptionPane.showMessageDialog(null, breathweapon);
             }
         } else if (userRace == "Dwarf") {
             stats.con = stats.con + 2;
