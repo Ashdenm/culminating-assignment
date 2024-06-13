@@ -2,14 +2,10 @@ import javax.swing.JOptionPane;
 
 
 public class sorcerer {
-    int sorcererLvl;
+    int sorcererLvl = App.level;
     int hp;
 
     public void pc() {
-        sorcererLvl = Integer.parseInt(JOptionPane.showInputDialog("What starting level? (1-20) b"));
-        while ((sorcererLvl <= 1) && (sorcererLvl >= 20)) {
-            JOptionPane.showMessageDialog(null, "Input wasn't a number between 1-20", null, JOptionPane.ERROR_MESSAGE);
-        }
 
         if (sorcererLvl == 1) {
             hp = 6 + stats.conMod;
