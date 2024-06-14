@@ -10,7 +10,7 @@ public class warlock {
         if (warlockLvl == 1) {
             hp = 8 + stats.conMod;
         } else {
-            hp = 8 + (5 * (warlockLvl - 1) + stats.conMod * warlockLvl);
+            hp = 8 + (5 * (warlockLvl - 1) + stats.conMod * warlockLvl + races.bonusHP);
         }
         JOptionPane.showMessageDialog(null, "HP: " + hp);
     } 

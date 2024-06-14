@@ -9,7 +9,7 @@ public class bard {
         if (bardLvl == 1) {
             hp = 8 + stats.conMod;
         } else {
-            hp = 8 + (5 * (bardLvl - 1) + stats.conMod * bardLvl);
+            hp = 8 + (5 * (bardLvl - 1) + stats.conMod * bardLvl + races.bonusHP);
         }
         JOptionPane.showMessageDialog(null, "HP: " + hp);
     } 

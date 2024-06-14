@@ -10,7 +10,7 @@ public class rogue {
         if (rogueLvl == 1) {
             hp = 8 + stats.conMod;
         } else {
-            hp = 8 + (5 * (rogueLvl - 1) + stats.conMod * rogueLvl);
+            hp = 8 + (5 * (rogueLvl - 1) + stats.conMod * rogueLvl + races.bonusHP);
         }
         JOptionPane.showMessageDialog(null, "HP: " + hp);
     } 

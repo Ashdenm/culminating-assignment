@@ -10,7 +10,7 @@ public class druid {
         if (druidLvl == 1) {
             hp = 8 + stats.conMod;
         } else {
-            hp = 8 + (5 * (druidLvl - 1) + stats.conMod * druidLvl);
+            hp = 8 + (5 * (druidLvl - 1) + stats.conMod * druidLvl + races.bonusHP);
         }
         JOptionPane.showMessageDialog(null, "HP: " + hp);
     } 

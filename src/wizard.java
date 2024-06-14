@@ -10,7 +10,7 @@ public class wizard {
         if (wizardLvl == 1) {
             hp = 6 + stats.conMod;
         } else {
-            hp = 6 + (4 * (wizardLvl - 1) + stats.conMod * wizardLvl);
+            hp = 6 + (4 * (wizardLvl - 1) + stats.conMod * wizardLvl + races.bonusHP);
         }
         JOptionPane.showMessageDialog(null, "HP: " + hp);
     } 

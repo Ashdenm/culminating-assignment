@@ -9,7 +9,7 @@ public class barbarian {
         if (barbarianLvl == 1) {
             hp = 12 + stats.conMod;
         } else {
-            hp = 12 + (7 * (barbarianLvl - 1) + stats.conMod * barbarianLvl);
+            hp = 12 + (7 * (barbarianLvl - 1) + stats.conMod * barbarianLvl + races.bonusHP);
         }
         JOptionPane.showMessageDialog(null, "HP: " + hp);
     } 

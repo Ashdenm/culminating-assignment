@@ -10,7 +10,7 @@ public class paladin {
         if (paladinLvl == 1) {
             hp = 10 + stats.conMod;
         } else {
-            hp = 10 + (6 * (paladinLvl - 1) + stats.conMod * paladinLvl);
+            hp = 10 + (6 * (paladinLvl - 1) + stats.conMod * paladinLvl + races.bonusHP);
         }
         JOptionPane.showMessageDialog(null, "HP: " + hp);
     } 

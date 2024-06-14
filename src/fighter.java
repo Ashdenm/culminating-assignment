@@ -10,7 +10,7 @@ public class fighter {
         if (fighterLvl == 1) {
             hp = 10 + stats.conMod;
         } else {
-            hp = 10 + (6 * (fighterLvl - 1) + stats.conMod * fighterLvl);
+            hp = 10 + (6 * (fighterLvl - 1) + stats.conMod * fighterLvl + races.bonusHP);
         }
         JOptionPane.showMessageDialog(null, "HP: " + hp);
     } 
