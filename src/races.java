@@ -7,6 +7,7 @@ public class races {
     Object elfSubraces[] = {"High", "Wood"};
     Object halflingSubraces[] = {"Lightfoot", "Stout"};
     Object heAbilities[] = {"str", "dex", "con", "int", "wis"};
+    static String userRace;
     boolean darkvision = false;
     static String breathweapon;
     int bWDmg;
@@ -16,7 +17,7 @@ public class races {
     static int bonusHP;
 
     public void race() {
-        String userRace = (String)JOptionPane.showInputDialog(null, "Choose a race", "Race choice", JOptionPane.QUESTION_MESSAGE, null,  races, "Dragonborn");
+        userRace = (String)JOptionPane.showInputDialog(null, "Choose a race", "Race choice", JOptionPane.QUESTION_MESSAGE, null,  races, "Dragonborn");
         if (userRace == "Dragonborn") {
             stats.str = stats.str + 2;
             stats.cha++;

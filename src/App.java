@@ -25,6 +25,7 @@ public class App {
         level = Integer.parseInt(JOptionPane.showInputDialog("What starting level? (1-20)"));
         while ((level <= 1) && (level >= 20)) {
             JOptionPane.showMessageDialog(null, "Input wasn't a number between 1-20", null, JOptionPane.ERROR_MESSAGE);
+            level = Integer.parseInt(JOptionPane.showInputDialog("What starting level? (1-20)"));
         }
         if (level >= 4){
             proficiency = 2;
@@ -82,5 +83,6 @@ public class App {
             wizard wiz = new wizard();
             wiz.pc();
         }
+        
     }
 }
