@@ -8,6 +8,7 @@ public class App {
     static int level;
     static Object statsOptions[] = {"Standard array", "Random", "Input"};
     static int proficiency;
+    static int ac;
     
     public static void main(String[] args) throws Exception {
         stats gen = new stats();
@@ -22,6 +23,7 @@ public class App {
             gen.inputStats();
             gen.abilityMods();
         }
+        ac = 10 + stats.dexMod;
         level = Integer.parseInt(JOptionPane.showInputDialog("What starting level? (1-20)"));
         while ((level <= 1) && (level >= 20)) {
             JOptionPane.showMessageDialog(null, "Input wasn't a number between 1-20", null, JOptionPane.ERROR_MESSAGE);

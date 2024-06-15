@@ -22,7 +22,7 @@ public class races {
             stats.str = stats.str + 2;
             stats.cha++;
             bWDC = 8 + stats.conMod + App.proficiency; 
-            if (App.level > 6) {
+            if (App.level < 6) {
                 bWDmg = 2;
             } else if (App.level > 5 && App.level < 11) {
                 bWDmg = 3;
@@ -34,33 +34,33 @@ public class races {
             
             String uDBSubrace = (String)JOptionPane.showInputDialog(null, "Choose a subrace", "Subrace choice", JOptionPane.QUESTION_MESSAGE, null,  dbSubraces, "Black");
             if (uDBSubrace == "Black" || uDBSubrace == "Copper") {
-                breathweapon = "Acid, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                breathweapon = "Breath weapon: Acid, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
                 JOptionPane.showMessageDialog(null, breathweapon);
                 resistance = "Acid";
             } else if (uDBSubrace == "Blue" || uDBSubrace == "Bronze") {
-                breathweapon = "Lightning, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                breathweapon = "Breath weapon: Lightning, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
                 JOptionPane.showMessageDialog(null, breathweapon);
                 resistance = "Lightning";
             } else if (uDBSubrace == "Brass") {
-                breathweapon = "Fire, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                breathweapon = "Breath weapon: Fire, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
                 JOptionPane.showMessageDialog(null, breathweapon);
                 resistance = "Fire";
             } else if (uDBSubrace == "Gold" || uDBSubrace == "Red") {
-                breathweapon = "Fire, 15 ft. cone, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                breathweapon = "Breath weapon: Fire, 15 ft. cone, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
                 JOptionPane.showMessageDialog(null, breathweapon);
-                resistance = "fire";
+                resistance = "Fire";
             } else if (uDBSubrace == "Copper") {
-                breathweapon = "Acid, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                breathweapon = "Breath weapon: Acid, 5 by 30 ft. line, dex save DC: " + bWDC + " , " + bWDmg + "d6 damage";
                 JOptionPane.showMessageDialog(null, breathweapon);
                 resistance = "Acid";
             } else if (uDBSubrace == "Green") {
-                breathweapon = "Poison, 15 ft. cone, con save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                breathweapon = "Breath weapon: Poison, 15 ft. cone, con save DC: " + bWDC + " , " + bWDmg + "d6 damage";
                 JOptionPane.showMessageDialog(null, breathweapon);
                 resistance = "Poison";
             } else if (uDBSubrace == "Silver" || uDBSubrace == "White") {
-                breathweapon = "Cold, 15 ft. cone, con save DC: " + bWDC + " , " + bWDmg + "d6 damage";
+                breathweapon = "Breath weapon: Cold, 15 ft. cone, con save DC: " + bWDC + " , " + bWDmg + "d6 damage";
                 JOptionPane.showMessageDialog(null, breathweapon);
-                resistance = "Cold";
+                resistance = "Breath weapon: Cold";
             }
         } else if (userRace == "Dwarf") {
             stats.con = stats.con + 2;
@@ -147,8 +147,8 @@ public class races {
             darkvision = true;
         }
         
-        Object aS[] = {"Str: "+ stats.str + " (" + stats.strMod + ")", "Dex: " + stats.dex + " (" + stats.dexMod + ")", "Con: " + stats.con + " (" + stats.conMod + ")", "Int: " + stats.inte + " (" + stats.inteMod + ")", "Wis: " + stats.wis + " (" + stats.wisMod + ")", "Cha: " + stats.cha + " (" + stats.chaMod + ")"};
-        JOptionPane.showMessageDialog(null, aS, "New stats after race choice", JOptionPane.INFORMATION_MESSAGE);
+        //Object aS[] = {"Str: "+ stats.str + " (" + stats.strMod + ")", "Dex: " + stats.dex + " (" + stats.dexMod + ")", "Con: " + stats.con + " (" + stats.conMod + ")", "Int: " + stats.inte + " (" + stats.inteMod + ")", "Wis: " + stats.wis + " (" + stats.wisMod + ")", "Cha: " + stats.cha + " (" + stats.chaMod + ")"};
+        //JOptionPane.showMessageDialog(null, aS, "New stats after race choice", JOptionPane.INFORMATION_MESSAGE);
         
     }
     
