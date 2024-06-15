@@ -1,6 +1,7 @@
 import javax.swing.JOptionPane;
 
 public class stats {
+    //variables to be called later
     static Object sa[] = {15, 14, 13, 12, 10, 8};
     public static int str;
     public static int dex;
@@ -15,7 +16,7 @@ public class stats {
     public static int wisMod;
     public static int chaMod;
 
-    public void standardArray() {
+    public void standardArray() { //code for standard array stat generation (doesn't let the user pick the same stat number twice)
         str = (Integer)JOptionPane.showInputDialog(null, "Choose strength score", "Strength score", JOptionPane.PLAIN_MESSAGE, null,  sa, 15);
 
         dex = (Integer)JOptionPane.showInputDialog(null, "Choose dexterity score (no duplicate stats)", "Dexterity score", JOptionPane.PLAIN_MESSAGE, null,  sa, 14);
@@ -45,7 +46,7 @@ public class stats {
         }
     }
 
-    public void randomStats() {
+    public void randomStats() { //code for random stat generation
         int min = 8;
         int max = 18;
         str = (int)Math.floor(Math.random() * (max - min + 1) + min);
@@ -56,7 +57,7 @@ public class stats {
         cha = (int)Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    public void inputStats() {
+    public void inputStats() { //code for stat inputs
         str = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Strength score (3-18)", "Strength score", JOptionPane.PLAIN_MESSAGE));
         while (str < 3 || str > 18) {
             str = Integer.parseInt(JOptionPane.showInputDialog(null, "Input Strength score (3-18)", "Strength score", JOptionPane.ERROR_MESSAGE));
@@ -85,7 +86,7 @@ public class stats {
     }
 
 
-    public void abilityMods() {
+    public void abilityMods() { //calculates ability modifiers based off score from the generation above
         if (str == 3) {
             strMod = -4;
         } else if (str >= 4 && str <= 5) {
@@ -220,6 +221,4 @@ public class stats {
         Object[] abilityScore = {"Str: "+ stats.str + " (" + stats.strMod + ")", "Dex: " + stats.dex + " (" + stats.dexMod + ")", "Con: " + stats.con + " (" + stats.conMod + ")", "Int: " + stats.inte + " (" + stats.inteMod + ")", "Wis: " + stats.wis + " (" + stats.wisMod + ")", "Cha: " + stats.cha + " (" + stats.chaMod + ")"};
         JOptionPane.showMessageDialog(null, abilityScore, "Stats generated", JOptionPane.INFORMATION_MESSAGE);
     }
-
-
 }

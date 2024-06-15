@@ -1,8 +1,8 @@
 import javax.swing.JOptionPane;
 
-public class App {
-    static Object[] classes = {"Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"};
-
+public class App { 
+    //creating variables to be called later
+    static Object[] classes = {"Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"}; 
     static String title = "Character Creator";
     static String message = "Choose a Class";
     static int level;
@@ -11,8 +11,8 @@ public class App {
     static int ac;
     
     public static void main(String[] args) throws Exception {
-        stats gen = new stats();
-        String statsMethod = (String)JOptionPane.showInputDialog(null, "Choose a stat generation method", "Stats generation", JOptionPane.PLAIN_MESSAGE, null,  statsOptions, "Standard array");
+        stats gen = new stats(); 
+        String statsMethod = (String)JOptionPane.showInputDialog(null, "Choose a stat generation method", "Stats generation", JOptionPane.PLAIN_MESSAGE, null,  statsOptions, "Standard array"); //lets user choose stat generation method
         if (statsMethod == "Standard array") {
             gen.standardArray();
             gen.abilityMods();
@@ -24,12 +24,12 @@ public class App {
             gen.abilityMods();
         }
         ac = 10 + stats.dexMod;
-        level = Integer.parseInt(JOptionPane.showInputDialog("What starting level? (1-20)"));
+        level = Integer.parseInt(JOptionPane.showInputDialog("What starting level? (1-20)")); //lets user choose starting level
         while ((level <= 1) && (level >= 20)) {
             JOptionPane.showMessageDialog(null, "Input wasn't a number between 1-20", null, JOptionPane.ERROR_MESSAGE);
             level = Integer.parseInt(JOptionPane.showInputDialog("What starting level? (1-20)"));
         }
-        if (level >= 4){
+        if (level >= 4){ //calculates proficiency bonus based off level
             proficiency = 2;
         } else if (level >= 5 && level < 9) {
             proficiency = 3;
@@ -42,11 +42,11 @@ public class App {
         }
 
         races racesObj = new races();
-        racesObj.race();
+        racesObj.race(); //lets user choose race
         gen.abilityMods();
         
 
-        String userClass = (String)JOptionPane.showInputDialog(null, message, title, JOptionPane.PLAIN_MESSAGE, null,  classes, "Barbarian");
+        String userClass = (String)JOptionPane.showInputDialog(null, message, title, JOptionPane.PLAIN_MESSAGE, null,  classes, "Barbarian"); //lets user choose class
 
         if (userClass == "Barbarian") {
             barbarian barbarian = new barbarian();
